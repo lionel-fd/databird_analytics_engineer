@@ -1,0 +1,168 @@
+models:
+    - name: stg_local_bike__orders
+      description: "This table contains informations about orders"
+      columns:
+      - name: order_id
+        description: "Primary Key for the order"
+        data_tests:
+          - unique
+          - not_null
+      - name: order_status
+        description: "current status with figures, transformed with names pending, processing, completed, cancelled "
+        data_tests:
+          - accepted_values:
+              name: accepted_value
+              arguments:
+                values: ['1', '2', '3', '4']
+      - name: customer_id
+        description: "foreign key from customers"
+        data_tests:
+          - relationships:
+              name: orders_customers
+              arguments:
+                to: ref('stg_local_bike__customers')
+                field: customer_id
+      - name: store_id
+        description: "foreign key from stores"
+        data_tests:
+          - relationships:
+              name: orders_stores
+              arguments:
+                to: ref('stg_local_bike__stores')
+                field: store_id
+      - name: staff_id
+        description: "foreign key from staffs"
+        data_tests:
+          - relationships:
+              name: orders_staffs
+              arguments:
+                to: ref('stg_local_bike__staffs')
+                field: staff_id
+
+    - name: stg_local_bike__order_items
+      description: "This table contains informations about each item in orders"
+      columns:
+      - name: order_item_id
+        description: "Primary Key for the order_item"
+        data_tests:
+          - unique
+          - not_null
+      - name: unit_price
+        description: "list_price is renamed unit_price"
+      - name: brut_total_amount
+        description: "total amount before %_discount using (quantity * unit_price)"
+      - name: order_id
+        description: "Foreign key linking the order items with orders"
+        data_tests:
+          - relationships:
+              name: order_items_orders
+              arguments:
+                to: ref('stg_local_bike__orders')
+                field: order_id
+      - name: product_id
+        description: "Foreign key linking the order items with products"
+        data_tests:
+          - relationships:
+              name: order_items_products
+              arguments:
+                to: ref('stg_local_bike__products')
+                field: product_id
+      
+    - name: stg_local_bike__products
+      description: "This table contains informations about each product"
+      columns:
+      - name: product_id
+        description: "Primary Key for the product"
+        data_tests:
+          - unique
+          - not_null
+      - name: category_id
+        description: "Foreign key linking categories with products"
+        data_tests:
+          - relationships:
+              name: products_categories
+              arguments:
+                to: ref('stg_local_bike__categories')
+                field: category_id
+      - name: brand_id
+        description: "Foreign key linking brands with products"
+        data_tests:
+          - relationships:
+              name: products_brands
+              arguments:
+                to: ref('stg_local_bike__brands')
+                field: brand_id
+
+    - name: stg_local_bike__categories
+      columns:
+        - name: category_id
+          description: "Primary Key for categories"
+          data_tests:
+            - unique
+            - not_null
+            
+    - name: stg_local_bike__stocks
+      columns:
+        - name: stock_product_id
+          description: "Primary Key for stocks using concat store_id and product_id"
+          data_tests:
+            - unique
+            - not_null
+        - name: product_id
+          description: "Foreign key linking stocks with products"
+          data_tests:
+          - relationships:
+              name: stocks_products
+              arguments:
+                to: ref('stg_local_bike__products')
+                field: product_id   
+        - name: store_id
+          description: "Foreign key linking stocks with stores"
+          data_tests:
+          - relationships:
+              name: stocks_stores
+              arguments:
+                to: ref('stg_local_bike__stores')
+                field: store_id
+    
+    - name: stg_local_bike__customers
+      columns:
+        - name: customer_id
+          description: "Primary Key for customers"
+          data_tests:
+            - unique
+            - not_null
+
+    - name: stg_local_bike__staffs
+      columns:
+        - name: staff_id
+          description: "Primary Key for staffs"
+          data_tests:
+            - unique
+            - not_null
+        - name: store_id
+          description: "Foreign key linking staffs with stores"
+          data_tests:
+          - relationships:
+              name: staffs_stores
+              arguments:
+                to: ref('stg_local_bike__stores')
+                field: store_id
+    
+    - name: stg_local_bike__stores
+      columns:
+        - name: store_id
+          description: "Primary Key for stores"
+          data_tests:
+            - unique
+            - not_null
+    
+    - name: stg_local_bike__brands
+      columns:
+        - name: brand_id
+          description: "Primary Key for brands"
+          data_tests:
+            - unique
+            - not_null
+          
+    

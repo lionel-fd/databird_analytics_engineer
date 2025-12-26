@@ -13,7 +13,7 @@ models:
         description: "foreign key from customers"
         data_tests:
           - relationships:
-              name: orders_vs_customers
+              name: orders_customers
               arguments:
                 to: ref('stg_local_bike__customers')
                 field: customer_id

@@ -11,8 +11,9 @@ models:
         description: "current status with figures, transformed with names pending, processing, completed, cancelled "
         data_tests:
           - accepted_values:
-              values:
-                - ['1', '2', '3', '4']      
+              name: accepted_values_order_status
+              arguments:
+                values: ['1', '2', '3', '4']      
       - name: customer_id
         description: "foreign key from customers"
         data_tests:

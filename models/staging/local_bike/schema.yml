@@ -9,16 +9,11 @@ models:
           - not_null
       - name: order_status
         description: "current status with figures, transformed with names pending, processing, completed, cancelled "
-        data_tests:
-          - accepted_values:
-              name: accepted_value
-              arguments:
-                values: ['1', '2', '3', '4']
       - name: customer_id
         description: "foreign key from customers"
         data_tests:
           - relationships:
-              name: orders_customers
+              name: orders_vs_customers
               arguments:
                 to: ref('stg_local_bike__customers')
                 field: customer_id

@@ -11,13 +11,7 @@ renamed as (
     select
         cast(order_id as string) as order_id,
         cast(customer_id as string) as customer_id,
-        case order_status
-            when 1 then 'pending'
-            when 2 then 'processing'
-            when 3 then 'completed'
-            when 4 then 'cancelled'
-            else 'unknown'
-        end as order_status,
+        cast(order_status as int) as order_status_code,
         cast(order_date as DATE) as order_date_at,
         cast(required_date as DATE) as required_date_at,
         shipped_date as shipped_date_at,

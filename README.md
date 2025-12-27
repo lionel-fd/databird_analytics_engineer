@@ -36,8 +36,10 @@ dbt pour les transformations et l'enrichissement (modèle en médaillon)
 GitHub pour le versionning
 PowerBI pour la visualisation
 
-Les statuts de commande, initialement stockés sous forme de codes numériques, 
-sont traduits en libellés métier afin d’améliorer la lisibilité des analyses et des tableaux de bord
+Les statuts de commande apparaissent sous forme de codes numériques.
+Il est observé que le 4 correspond aux commandes expédiées.
+Nous manquons d'informations pour définir les codes 1, 2 et 3
+Dans l'analyse nous conserverons uniquement les commandes expédiées pour plus de clarté.
 
 
 Ce projet est réalisé dans le cadre d'une formation

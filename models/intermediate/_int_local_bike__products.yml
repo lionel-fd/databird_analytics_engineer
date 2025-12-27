@@ -1,0 +1,13 @@
+models:
+  - name: int_local_bike__products
+    description: '{{ doc( "int_local_bike__products" )}}'
+    columns:
+      - name: product_id
+        description: "Primary key for int_local_bike__products"
+        data_tests:
+          - unique
+          - not_null
+      - name: category_name
+        data_tests:
+          - not_null
+      

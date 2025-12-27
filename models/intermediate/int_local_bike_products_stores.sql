@@ -20,17 +20,21 @@ categories as
 stocks as
 (
     select
+        stock_product_id,
         product_id,
+        store_id,
         quantity_in_stock
     from {{ ref('stg_local_bike__stocks') }}
 
 )
 
 select 
+    s.stock_product_id as store_product_id,
     p.product_id,
     p.product_name,
     c.category_name,
     p.model_year,
+    s.store_id,
     p.catalog_price,
     s.quantity_in_stock
 

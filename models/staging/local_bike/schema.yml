@@ -119,7 +119,13 @@ models:
               arguments:
                 to: ref('stg_local_bike__stores')
                 field: store_id
-    
+        - name: quantity
+          description: "units in stock"
+          data_tests:
+            - dbt_utils.expression_is_true:
+                expression: ">= 0"
+            
+
     - name: stg_local_bike__customers
       columns:
         - name: customer_id

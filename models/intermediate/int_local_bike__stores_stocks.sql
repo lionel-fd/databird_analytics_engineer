@@ -12,6 +12,7 @@ products as
 )
 
 select
+    
     s.store_id,
     s.product_id,
     s.quantity,

@@ -1,26 +1,8 @@
 models:
-  - name: int_local_bike__products_stores
+  - name: int_local_bike__stores_stocks
     description: '{{ doc( "int_local_bike__products" )}}'
-    columns:
-      - name: store_product_id
-        description: "Primary key for int_local_bike__products_stores"
-        data_tests:
-          - unique
-          - not_null
-      - name: category_name
-        data_tests:
-          - not_null
 
   - name : int_local_bike__products
     description: '{{ doc( "int_local_bike__products" )}}'
-    columns:
-      - name: product_id
-        description: "Primary key for int_local_bike__products"
-        data_tests:
-          - unique
-          - not_null
-      - name: category_name
-        data_tests:
-          - not_null
 
       

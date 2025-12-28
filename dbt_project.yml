@@ -51,6 +51,6 @@ models:
       +schema: int_local_bike
         
 
-    #mart:
-    #  +materialized: table
-    #  +schema: mrt_local_bike
+    mart:
+      +materialized: table
+      +schema: mrt_local_bike

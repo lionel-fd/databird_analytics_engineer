@@ -15,8 +15,8 @@ select
     
     s.store_id,
     s.product_id,
-    s.quantity,
-    (s.quantity * p.catalog_price) as stock_value
+    s.quantity_in_stock,
+    (s.quantity_in_stock * p.catalog_price) as stock_value
 from stocks s
 join products p 
 on s.product_id = p.product_id

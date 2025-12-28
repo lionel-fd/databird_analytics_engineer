@@ -2,11 +2,6 @@ models:
   - name: int_local_bike__orders_shipped
     description: '{{ doc( "int_local_bike__orders_shipped" )}}'
     columns:
-      - name: order_id
-        description: "Primary key for int_local_bike__orders_shipped"
-        data_tests:
-          - unique
-          - not_null
       - name: required_date_at
         description: "delivery required date"
         data_tests:

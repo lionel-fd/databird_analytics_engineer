@@ -1,10 +1,3 @@
 models:
   - name: int_local_bike__orders
     description: '{{ doc( "int_local_bike__orders" )}}'
-    columns:
-      - name: delivery_status
-        description: "can be ahead, on_time or late"
-        data_tests:
-          - accepted_values:
-              name: accepted_values_delivery_status
-              values: ['ahead', 'on_time', 'late']

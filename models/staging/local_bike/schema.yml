@@ -98,7 +98,7 @@ models:
             
     - name: stg_local_bike__stocks
       columns:
-        - name: stock_product_id
+        - name: store_product_id
           description: "Primary Key for stocks using concat store_id and product_id"
           data_tests:
             - unique

@@ -14,7 +14,7 @@ renamed as (
         cast(order_status as int) as order_status_code,
         cast(order_date as DATE) as order_date_at,
         cast(required_date as DATE) as required_date_at,
-        cast(shipped_date as DATE) as shipped_date_at,
+        safe_cast(shipped_date as DATE) as shipped_date_at,
         cast(store_id as string) as store_id,
         cast(staff_id as string) as staff_id
 

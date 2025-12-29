@@ -12,23 +12,19 @@ Local Bike souhaite développer son premier tableau de bord et se lancer dans l�
 Les analyses développées visent à répondre aux problématiques suivantes :
 
 Performance commerciale
-- Chiffre d’affaires total
+- Chiffre d’affaires total 
+- Impact du discount
 - Évolution temporelle du CA
-- Panier moyen
+- Prix moyen
 - Nombre de ventes
 
 Analyse par boutique
-- Comparaison des performances entre Santa Cruz, Baldwin et Rowlett
-- Contribution de chaque boutique au CA global
+- Comparaison des performances entre les 3 magasins
 
 Produits
-- Top / Flop produits
-- Répartition du CA par catégorie de vélos
-- Contribution des produits au revenu global
+- Top / Bottom produits
+- Répartition du CA par catégorie
 
-Clients
-- Nouveaux vs clients récurrents
-- Valeur moyenne par client
 
 Outils utilisés :
 BigQuery pour la source
@@ -39,7 +35,6 @@ PowerBI pour la visualisation
 Les statuts de commande apparaissent sous forme de codes numériques.
 Il est observé que le 4 correspond aux commandes expédiées.
 Nous manquons d'informations pour définir les codes 1, 2 et 3
-Dans l'analyse nous conserverons uniquement les commandes expédiées pour plus de clarté.
 
 
 Ce projet est réalisé dans le cadre d'une formation

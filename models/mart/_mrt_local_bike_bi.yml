@@ -14,13 +14,3 @@ models:
 
   - name: dim_stores
     description: 'table reference for interaction with PowerBI'
-
-models:
-
-  - name: mrt_operations__daily_order_performance
-    description: "This model summarizes daily order data by city and state, including total orders, total order amount, and average order amount."
-    columns:
-    - name: total_orders  
-      tests:
-        - dbt_utils.expression_is_true:
-            expression: '>= 0'

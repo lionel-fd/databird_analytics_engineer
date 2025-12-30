@@ -1,0 +1,18 @@
+models:
+  - name: int_local_bike__orders
+    description: '{{ doc( "int_local_bike__orders" )}}'
+    columns:
+      - name: order_id
+        description: "Primary key for int__orders."
+        data_tests:
+          - unique
+          - not_null
+  
+  - name: int_local_bike__stores_stocks
+    description: 'add stock_value measure quantity * catalogue_price'
+    columns:
+      - name: store_product_id
+        description: "Primary key for int__stores_stocks."
+        data_tests:
+          - unique
+          - not_null

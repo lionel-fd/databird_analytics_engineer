@@ -6,8 +6,8 @@ with stocks as
 products as 
 (
     select 
-        product_id, 
-        catalog_price 
+        product_id,
+        catalog_price
     from {{ ref('stg_local_bike__products') }}
 )
 
@@ -17,6 +17,6 @@ select
     s.product_id,
     s.quantity_in_stock,
     (s.quantity_in_stock * p.catalog_price) as stock_value
-from stocks s
-join products p 
-on s.product_id = p.product_id
+from stocks as s
+join products as p 
+    on s.product_id = p.product_id

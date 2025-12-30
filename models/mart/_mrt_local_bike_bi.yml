@@ -1,0 +1,30 @@
+models:
+  - name: fct_sales_agg
+    description: 'adds total amounts and net_average_price as support PowerBI analyse'
+    columns:
+      - name: gross_amount
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
+      - name: net_amount
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
+      - name: qty_sold
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
+  
+  - name: fct_stocks
+    description: 'final table for PowerBI'
+    columns:
+      - name: quantity_in_stock
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: '>= 0'
+
+  - name: dim_product
+    description: 'table reference for interaction with PowerBI' 
+
+  - name: dim_stores
+    description: 'table reference for interaction with PowerBI'
